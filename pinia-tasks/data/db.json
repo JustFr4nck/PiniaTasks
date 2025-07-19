@@ -1,0 +1,24 @@
+{
+  "tasks": [
+    {
+      "id": "2",
+      "title": "Go out with Emma",
+      "isFav": true
+    },
+    {
+      "id": "4",
+      "title": "call nonna",
+      "isFav": true
+    },
+    {
+      "id": "5",
+      "title": "clean my bedroom",
+      "isFav": true
+    },
+    {
+      "id": 9794,
+      "title": "go to lunch",
+      "isFav": false
+    }
+  ]
+}

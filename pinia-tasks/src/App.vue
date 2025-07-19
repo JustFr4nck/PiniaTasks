@@ -1,5 +1,6 @@
 <script>
-  import TaskDetail from './components/TaskDetail.vue';
+  import { storeToRefs } from 'pinia';
+import TaskDetail from './components/TaskDetail.vue';
   import TaskForm from './components/TaskForm.vue';
   import { useTaskStore } from './stores/TaskStore';
   import { ref } from 'vue';
@@ -8,6 +9,9 @@
     components: {TaskDetail, TaskForm},
     setup () {
       const taskStore = useTaskStore();
+
+      //Fetch tasks
+      taskStore.getTasks();
 
       const filter = ref('all');
 
@@ -37,6 +41,10 @@
       <button @click="filter = 'all'">All tasks</button>
       <button @click="filter = 'favs'">Fav tasks</button>
     </nav>
+
+    <!--loading-->
+
+    <div class="loading" v-if="taskStore.loading">Loading tasks...</div>
 
     <!--task list-->
     <div class="task-list" v-if="filter === 'all'">
