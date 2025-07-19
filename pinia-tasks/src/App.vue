@@ -1,9 +1,11 @@
 <script>
   import TaskDetail from './components/TaskDetail.vue';
+  import TaskForm from './components/TaskForm.vue';
   import { useTaskStore } from './stores/TaskStore';
   import { ref } from 'vue';
+  
   export default{
-    components: {TaskDetail},
+    components: {TaskDetail, TaskForm},
     setup () {
       const taskStore = useTaskStore();
 
@@ -22,6 +24,12 @@
       <img src="./assets/pinia-seeklogo.svg" alt="pinia logo" >
       <h1>Pinia Tasks</h1>
     </header>
+
+    <!-- newTask -->
+
+    <div class="new-Task-Form">
+      <TaskForm/>
+    </div>
 
     <!--Filter-->
 
